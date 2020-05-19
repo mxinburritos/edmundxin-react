@@ -1,6 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {
+	MuiThemeProvider,
+	ThemeProvider,
+	createMuiTheme,
+	CssBaseline,
+} from "@material-ui/core";
 
 import App from "./App";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+import "./index.css";
+
+// const colorTheme = createMuiTheme({
+// 	palette: {
+// 		type: "dark",
+// 	},
+// });
+
+ReactDOM.render(
+	<ThemeProvider>
+		<CssBaseline />
+		<App />
+	</ThemeProvider>,
+	document.getElementById("root")
+);

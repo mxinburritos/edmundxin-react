@@ -9,12 +9,10 @@
 .container {
 	margin: 0;
 	padding: 0;
-
 	background-image: url("/assets/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;

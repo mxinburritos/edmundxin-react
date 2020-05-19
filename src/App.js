@@ -1,9 +1,8 @@
 import React from "react";
 
 import Jumbotron from "./components/Jumbotron/Jumbotron";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css";
+import CardLayout from "./components/ProjectCards/CardLayout";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
 	return (
