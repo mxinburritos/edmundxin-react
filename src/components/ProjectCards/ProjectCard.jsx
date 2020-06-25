@@ -6,6 +6,7 @@ import {
   CardActionArea,
   CardContent,
   Box,
+  CardMedia,
 } from '@material-ui/core';
 import cx from 'classnames';
 import Masonry from 'react-masonry-component';
@@ -14,7 +15,7 @@ import styling from './ProjectCard.module.css';
 
 const useStyles = makeStyles(() => ({
   root: {
-    maxWidth: 304,
+    maxWidth: 400,
     margin: 'auto',
     borderRadius: 0,
     position: 'relative',
@@ -34,30 +35,39 @@ const useStyles = makeStyles(() => ({
     color: '#000',
     letterSpacing: '2px',
   },
+  media: {
+    height: 200,
+  },
 }));
 
-const ProjectCard = () => {
+const ProjectCard = ({ project }) => {
   const styles = useStyles();
+  console.log(project.title);
   return (
     <Box m={2}>
       <Card classNames={cx(styles.root, styling.card)}>
         <CardActionArea>
+          <CardMedia
+            className={styles.media}
+            image={project.image}
+            title="Singapore"
+          />
           <Box
             display={'flex'}
             flexDirection={'column'}
             alignItems={'center'}
-            justifyContent={'center'}
-            height={360}
-            width={400}
+            justifyContent={'flex-end'}
+            height={120}
+            width={300}
             color={'common.white'}
             textAlign={'center'}
           >
             <CardContent>
-              <Typography className={styles.title} variant="h1">
-                Project
+              <Typography gutterBottom className={styles.title} variant="h6">
+                {project.title}
               </Typography>
-              <Typography color="primary" variant="h3">
-                Project Contents
+              <Typography gutterBottom color="primary" variant="subtitle1">
+                {project.description}
               </Typography>
             </CardContent>
           </Box>

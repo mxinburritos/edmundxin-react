@@ -1,34 +1,40 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, Typography, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const FormatButton = styled(Button)`
+  && {
+    text-transform: none;
+    color: white;
+    font-size: 15px;
+  }
+`;
 
 const Navbar = () => {
   return (
-    <AppBar color="transparent" position="static" elevation={0}>
+    <AppBar color='transparent' position='static' elevation={0}>
       <Toolbar>
-        <Grid container justify="space-between" spacing={24}>
+        <Grid container justify='center' alignItems='center' spacing={3}>
           <Grid item>
-            <Typography
-              type="title"
-              variant="h6"
-              color="inherit"
-              style={{ marginLeft: 100 }}
-            >
-              Edmund Xin
-            </Typography>
+            <Link to='/' style={{ textDecoration: 'none' }}>
+              <FormatButton>Home</FormatButton>
+            </Link>
           </Grid>
           <Grid item>
-            <div style={{ marginRight: 100 }}>
-              <Link to="/" style={{ textDecoration: 'none' }}>
-                <Button pt={100}>Projects</Button>
-              </Link>
-              <Link to="/resume" style={{ textDecoration: 'none' }}>
-                <Button pt={100}>Resume</Button>
-              </Link>
-              <Link to="/contactme" style={{ textDecoration: 'none' }}>
-                <Button pt={100}>Projects</Button>
-              </Link>
-            </div>
+            <Link to='/projects' style={{ textDecoration: 'none' }}>
+              <FormatButton>Projects</FormatButton>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to='/resume' style={{ textDecoration: 'none' }}>
+              <FormatButton>Resume</FormatButton>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to='/contactme' style={{ textDecoration: 'none' }}>
+              <FormatButton>Contact</FormatButton>
+            </Link>
           </Grid>
         </Grid>
       </Toolbar>
