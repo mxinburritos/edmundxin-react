@@ -7,7 +7,7 @@ import Resume from './components/Resume/Resume';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Background from './assets/img/ryanHuttonJztmx9yqjbwUnsplash.png';
+import Background from './assets/img/ryanHuttonJztmx9yqjbwUnsplash.jpg';
 
 const BackgroundImage = styled.div`
   position: fixed;
