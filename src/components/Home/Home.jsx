@@ -22,7 +22,7 @@ const Subtitle = styled(Typography)`
 
 const ChubbyButton = styled(Button)`
   border-radius: 5em;
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.1);
   font-size: 15px;
   font-weight bold;
   text-transform: none;
@@ -35,7 +35,7 @@ const ChubbyButton = styled(Button)`
   backdrop-filter: blur(3px);
 
   &:hover {
-    background-color:(50,250,50,1);
+    background-color: rgb(255, 255, 255, 0.05);
   }
 `;
 
@@ -46,7 +46,7 @@ const Home = () => {
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
-      height='100%'
+      height='80%'
     >
       <Title>I'm Edmund Xin.</Title>
       <Subtitle>

@@ -27,12 +27,12 @@ const Navbar = () => {
             </Link>
           </Grid>
           <Grid item>
-            <Link to='/resume' style={{ textDecoration: 'none' }}>
-              <FormatButton>Resume</FormatButton>
+            <Link to='/about' style={{ textDecoration: 'none' }}>
+              <FormatButton>About</FormatButton>
             </Link>
           </Grid>
           <Grid item>
-            <Link to='/contactme' style={{ textDecoration: 'none' }}>
+            <Link to='/contact' style={{ textDecoration: 'none' }}>
               <FormatButton>Contact</FormatButton>
             </Link>
           </Grid>
