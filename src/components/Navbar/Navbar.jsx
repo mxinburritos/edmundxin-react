@@ -1,15 +1,15 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, Typography, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { styled } from '@material-ui/core/styles';
 
-const FormatButton = styled(Button)`
-  && {
-    text-transform: none;
-    color: white;
-    font-size: 15px;
-  }
-`;
+const FormatButton = styled(Button)({
+  '&&': {
+    textTransform: 'none',
+    color: 'white',
+    fontSize: '15px',
+  },
+});
 
 const Navbar = () => {
   return (
@@ -26,7 +26,7 @@ const Navbar = () => {
               <FormatButton>Projects</FormatButton>
             </Link>
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <Link to='/about' style={{ textDecoration: 'none' }}>
               <FormatButton>About</FormatButton>
             </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to='/contact' style={{ textDecoration: 'none' }}>
               <FormatButton>Contact</FormatButton>
             </Link>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Toolbar>
     </AppBar>

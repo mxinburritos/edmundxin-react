@@ -1,43 +1,45 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@material-ui/core/styles';
 import { Box, Typography, Button, Grid } from '@material-ui/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+
 import Resume from '../../assets/docs/resume.pdf';
 
 library.add(fab);
 
-const Title = styled(Typography)`
-  color: white;
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: -0.1em;
-`;
+const Title = styled(Typography)({
+  color: 'white',
+  fontSize: '60px',
+  fontWeight: 'bold',
+  marginBottom: '-0.1em',
+});
 
-const Subtitle = styled(Typography)`
-  color: white;
-  font-size: 15px;
-`;
+const Subtitle = styled(Typography)({
+  color: 'white',
+  fontSize: '15px',
+});
 
-const ChubbyButton = styled(Button)`
-  border-radius: 5em;
-  background-color: rgb(255, 255, 255, 0.1);
-  font-size: 15px;
-  font-weight bold;
-  text-transform: none;
-  color: white;
-  margin: 1em;
-  padding: 0.4em;
-  padding-left: 2em;
-  padding-right: 2em;
+const ChubbyButton = styled(Button)({
+  borderRadius: '5em',
+  backgroundColor: 'rgb(255, 255, 255, 0.1)',
+  fontSize: '15px',
+  fontWeight: 'bold',
+  textTransform: 'none',
+  color: 'white',
+  margin: '1em',
+  padding: '0.4em',
+  paddingLeft: '2em',
+  paddingRight: '2em',
 
-  backdrop-filter: blur(3px);
+  backdropFilter: 'blur(3px)',
 
-  &:hover {
-    background-color: rgb(255, 255, 255, 0.05);
-  }
-`;
+  '&:hover': {
+    backgroundColor: 'rgb(255, 255, 255, 0.05)',
+  },
+});
 
 const Home = () => {
   return (
@@ -50,18 +52,16 @@ const Home = () => {
     >
       <Title>I'm Edmund Xin.</Title>
       <Subtitle>
-        {'Front End Developer \u2758 Competitive Programmer \u2758 Student'}
+        {'Software Engineer \u2758 Competitive Programmer \u2758 Student'}
       </Subtitle>
       <Grid justify='center' container spacing={3}>
         <Grid item>
-          <ChubbyButton href='https://github.com/mxinburritos' target='_blank'>
-            Portfolio
-          </ChubbyButton>
+          <Link to='/projects' style={{ textDecoration: 'none' }}>
+            <ChubbyButton target='_blank'>Portfolio</ChubbyButton>
+          </Link>
         </Grid>
         <Grid item>
-          <ChubbyButton href={Resume} target='_blank'>
-            Resume
-          </ChubbyButton>
+          <ChubbyButton target='_blank'>Resume</ChubbyButton>
         </Grid>
       </Grid>
       <Grid justify='center' container spacing={3}>

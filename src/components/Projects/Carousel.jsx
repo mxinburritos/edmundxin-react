@@ -1,3 +1,4 @@
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import React, { useState } from 'react';
 import {
   Card,
@@ -7,41 +8,88 @@ import {
   Typography,
   Box,
 } from '@material-ui/core';
-import styled from 'styled-components';
+import { styled } from '@material-ui/core/styles';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import {
+  Image,
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from 'pure-react-carousel';
 
-const ArrowButton = styled(Button)`
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  padding: 0;
-  height: 65px;
-  width: 50px;
+import './Carousel.css';
+import gcaimage from '../../assets/img/group-chat-analyzer-image.png';
+import wimage from '../../assets/img/weatherboy-image.png';
+import dtsimage from '../../assets/img/dts-image.png';
 
-  backdrop-filter: blur(3px);
+const CardSlide = styled(Slide)({
+  backdropFilter: 'blur(3px)',
+  borderRadius: '1em',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+});
 
-  .white {
-    color: rgb(255, 255, 255, 1);
-    transition: 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-    transform: scale(1.3);
-  }
+const ArrowButtonNext = styled(ButtonNext)({
+  border: 'none',
+  outline: 'none',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  borderRadius: '50%',
+  padding: 0,
+  height: '50px',
+  width: '50px',
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    .white {
-      transform: scale(1.7);
-    }
-  }
-`;
+  backdropFilter: 'blur(3px)',
 
-const BlurredCard = styled(Card)`
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  height: 40em;
-  width: 70em;
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+  },
+});
 
-  backdrop-filter: blur(3px);
-`;
+const ArrowButtonBack = styled(ButtonBack)({
+  border: 'none',
+  outline: 'none',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  borderRadius: '50%',
+  padding: 0,
+  height: '50px',
+  width: '50px',
+
+  backdropFilter: 'blur(3px)',
+
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+  },
+});
+
+const BlurredCard = styled(Card)({
+  borderRadius: '10px',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  height: '40em',
+  width: '70em',
+
+  backdropFilter: 'blur(3px)',
+});
+
+const ChubbyButton = styled(Button)({
+  borderRadius: '5em',
+  backgroundColor: 'rgb(255, 255, 255, 0.1)',
+  fontSize: '15px',
+  fontWeight: 'bold',
+  textTransform: 'none',
+  color: 'white',
+  margin: '1em',
+  padding: '0.4em',
+  paddingLeft: '2em',
+  paddingRight: '2em',
+
+  backdropFilter: 'blur(3px)',
+
+  '&:hover': {
+    backgroundColor: 'rgb(255, 255, 255, 0.05)',
+  },
+});
 
 const projectInfo = [{}];
 
@@ -49,31 +97,117 @@ const Carousel = () => {
   const [content, setContent] = useState([]);
 
   return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      justifyContent='center'
-      alignItems='center'
-      height='80%'
+    <CarouselProvider
+      visibleSlides={1}
+      totalSlides={3}
+      naturalSlideWidth={400}
+      naturalSlideHeight={300}
+      className='carousel-center'
     >
-      <Grid container spacing={3} justify='center' alignItems='center'>
-        <Grid item>
-          <ArrowButton>
-            <KeyboardArrowLeft className='white' />
-          </ArrowButton>
-        </Grid>
-        <Grid item>
-          <BlurredCard>
-            <CardContent></CardContent>
-          </BlurredCard>
-        </Grid>
-        <Grid item>
-          <ArrowButton>
-            <KeyboardArrowRight className='white' />
-          </ArrowButton>
-        </Grid>
-      </Grid>
-    </Box>
+      <div className='carousel-container'>
+        <Slider>
+          <CardSlide index={0}>
+            <Image
+              src={gcaimage}
+              isBgImage={true}
+              className='image-container'
+              tag='div'
+            >
+              <div className='bottom-title'>
+                <Typography variant='h3' style={{ color: 'white' }}>
+                  Group Chat Analyzer
+                </Typography>
+                <Typography style={{ color: 'white' }}>
+                  📱Application that takes JSON data from Facebook Messenger and
+                  analyses contents. It will display metrics like the number of
+                  swear words spoken for each person and charts to represent it.
+                </Typography>
+                <div>
+                  <ChubbyButton
+                    href='https://mxinburritos.github.io/group-chat-analyzer/'
+                    target='_blank'
+                  >
+                    Live Demo
+                  </ChubbyButton>
+                  <ChubbyButton
+                    href='https://github.com/mxinburritos/group-chat-analyzer'
+                    target='_blank'
+                  >
+                    Github Repo
+                  </ChubbyButton>
+                </div>
+              </div>
+            </Image>
+          </CardSlide>
+          <CardSlide index={1}>
+            <Image
+              src={wimage}
+              isBgImage={true}
+              className='image-container'
+              tag='div'
+            >
+              <div className='bottom-title'>
+                <Typography variant='h3' style={{ color: 'white' }}>
+                  Weatherboy
+                </Typography>
+                <Typography style={{ color: 'white' }}>
+                  ⛅️ A simple weather application that gives allows you to
+                  search for cities around the world. It displays the current
+                  temperature and the week's forecast. The background image will
+                  change to reflect the city you searched.
+                </Typography>
+                <div>
+                  <ChubbyButton
+                    href='mxinburritos.github.io/weatherboy/'
+                    target='_blank'
+                  >
+                    Live Demo
+                  </ChubbyButton>
+                  <ChubbyButton
+                    href='https://github.com/mxinburritos/weatherboy'
+                    target='_blank'
+                  >
+                    Github Repo
+                  </ChubbyButton>
+                </div>
+              </div>
+            </Image>
+          </CardSlide>
+          <CardSlide index={2}>
+            <Image
+              src={dtsimage}
+              isBgImage={true}
+              className='image-container'
+              tag='div'
+            >
+              <div className='bottom-title'>
+                <Typography variant='h3' style={{ color: 'white' }}>
+                  Disaster Tweet Classification
+                </Typography>
+                <Typography style={{ color: 'white' }}>
+                  ☄️ Processes contents of a tweet and classifies it as
+                  referring to a disaster or not using a Naive Bayes Classifier.
+                </Typography>
+                <div>
+                  <ChubbyButton
+                    href='https://github.com/mxinburritos/disaster-tweet-sorting/'
+                    target='_blank'
+                  >
+                    Github Repo
+                  </ChubbyButton>
+                </div>
+              </div>
+            </Image>
+          </CardSlide>
+        </Slider>
+        <ArrowButtonBack className='button-back'>
+          <KeyboardArrowLeft className='white' />
+        </ArrowButtonBack>
+        <ArrowButtonNext className='button-next'>
+          <KeyboardArrowRight className='white' />
+        </ArrowButtonNext>
+      </div>
+    </CarouselProvider>
   );
 };
 

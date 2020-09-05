@@ -7,7 +7,13 @@ import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from 'react-router-dom';
+import SlideRoutes from 'react-slide-routes';
 import Background from './assets/img/ryanHuttonJztmx9yqjbwUnsplash.jpg';
 
 const BackgroundImage = styled.div`
