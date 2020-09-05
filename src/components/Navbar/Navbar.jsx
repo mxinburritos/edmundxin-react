@@ -26,12 +26,12 @@ const Navbar = () => {
               <FormatButton>Projects</FormatButton>
             </Link>
           </Grid>
-          {/* <Grid item>
+          <Grid item>
             <Link to='/about' style={{ textDecoration: 'none' }}>
               <FormatButton>About</FormatButton>
             </Link>
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <Link to='/contact' style={{ textDecoration: 'none' }}>
               <FormatButton>Contact</FormatButton>
             </Link>

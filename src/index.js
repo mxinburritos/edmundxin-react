@@ -1,15 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {
-	MuiThemeProvider,
-	ThemeProvider,
-	createMuiTheme,
-	CssBaseline,
-} from "@material-ui/core";
+  MuiThemeProvider,
+  ThemeProvider,
+  createMuiTheme,
+  CssBaseline,
+} from '@material-ui/core';
 
-import App from "./App";
+import App from './App';
 
-import "./index.css";
+import './index.css';
 
 // const colorTheme = createMuiTheme({
 // 	palette: {
@@ -18,9 +18,9 @@ import "./index.css";
 // });
 
 ReactDOM.render(
-	<ThemeProvider>
-		<CssBaseline />
-		<App />
-	</ThemeProvider>,
-	document.getElementById("root")
+  <ThemeProvider>
+    <CssBaseline />
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
 );

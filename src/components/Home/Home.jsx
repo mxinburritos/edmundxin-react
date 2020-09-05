@@ -22,6 +22,15 @@ const Subtitle = styled(Typography)({
   fontSize: '15px',
 });
 
+const TitleCard = styled(Box)({
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  margin: 'auto',
+});
+
 const ChubbyButton = styled(Button)({
   borderRadius: '5em',
   backgroundColor: 'rgb(255, 255, 255, 0.1)',
@@ -43,12 +52,12 @@ const ChubbyButton = styled(Button)({
 
 const Home = () => {
   return (
-    <Box
+    <TitleCard
       display='flex'
       flexDirection='column'
       justifyContent='center'
       alignItems='center'
-      height='80%'
+      height='60%'
     >
       <Title>I'm Edmund Xin.</Title>
       <Subtitle>
@@ -61,7 +70,9 @@ const Home = () => {
           </Link>
         </Grid>
         <Grid item>
-          <ChubbyButton target='_blank'>Resume</ChubbyButton>
+          <ChubbyButton href={Resume} target='_blank'>
+            Resume
+          </ChubbyButton>
         </Grid>
       </Grid>
       <Grid justify='center' container spacing={3}>
@@ -110,7 +121,7 @@ const Home = () => {
           </a>
         </Grid>
       </Grid>
-    </Box>
+    </TitleCard>
   );
 };
 

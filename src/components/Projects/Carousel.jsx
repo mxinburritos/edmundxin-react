@@ -37,10 +37,11 @@ const ArrowButtonNext = styled(ButtonNext)({
   backgroundColor: 'rgba(255, 255, 255, 0.1)',
   borderRadius: '50%',
   padding: 0,
+  margin: '1em',
   height: '50px',
   width: '50px',
 
-  backdropFilter: 'blur(3px)',
+  backdropFilter: 'blur(4px)',
 
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -53,10 +54,11 @@ const ArrowButtonBack = styled(ButtonBack)({
   backgroundColor: 'rgba(255, 255, 255, 0.1)',
   borderRadius: '50%',
   padding: 0,
+  margin: '1em',
   height: '50px',
   width: '50px',
 
-  backdropFilter: 'blur(3px)',
+  backdropFilter: 'blur(4px)',
 
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
@@ -158,7 +160,7 @@ const Carousel = () => {
                 </Typography>
                 <div>
                   <ChubbyButton
-                    href='mxinburritos.github.io/weatherboy/'
+                    href='https://mxinburritos.github.io/weatherboy/'
                     target='_blank'
                   >
                     Live Demo

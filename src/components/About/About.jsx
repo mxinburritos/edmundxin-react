@@ -4,15 +4,6 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import { styled } from '@material-ui/core/styles';
 import Avatar from 'react-avatar';
 
-const WhiteTitle = styled(Typography)({
-  color: 'white',
-  fontWeight: 'bold',
-});
-
-const WhiteBody = styled(Typography)({
-  color: 'white',
-});
-
 const ChubbyButton = styled(Button)({
   borderRadius: '5em',
   backgroundColor: 'rgb(255, 255, 255, 0.1)',
@@ -32,9 +23,23 @@ const ChubbyButton = styled(Button)({
   },
 });
 
+const AboutCard = styled(Box)({
+  backdropFilter: 'blur(4px)',
+  backgroundColor: 'rgb(255, 255, 255, 0.1)',
+  width: '60vw',
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0,
+  margin: 'auto',
+  padding: '2em',
+  borderRadius: '1em',
+});
+
 const Resume = () => {
   return (
-    <Box
+    <AboutCard
       display='flex'
       flexDirection='column'
       justifyContent='center'
@@ -43,39 +48,32 @@ const Resume = () => {
     >
       <section id='about'>
         <div className='row'>
-          <div className='three columns'>
-            <Avatar
-              size='100'
-              facebook-id='Edmund Xin'
-              src='https://media-exp1.licdn.com/dms/image/C5603AQFgAI3p-3o0RQ/profile-displayphoto-shrink_400_400/0?e=1598486400&v=beta&t=odW4KVtdpEIIXo0-ZeMr6TWlpBliIRfQL3432saASL0'
-              round={true}
-            />
-          </div>
           <div className='nine columns main-col'>
-            <WhiteTitle variant='h5' color='white'>
+            <Typography variant='h5' style={{ color: 'white' }}>
               About Me
-            </WhiteTitle>
-            <WhiteBody variant='subtitle1'>
+            </Typography>
+            <Typography style={{ color: 'white' }}>
               I'm currently attending the Georgia Institute of Technology
               pursuing a B.S. of Computer Science. I intend to graduate in May
               2024.
               <br />
-              <br />I like dogs, programming, and drinking water.
-            </WhiteBody>
+              <br />
+              I'm hoping to find an internship for Summer 2021.
+              <br />
+              <br />
+            </Typography>
             <div className='row'>
               <div className='columns contact-details'>
-                <WhiteTitle variant='h5'>Contact Info</WhiteTitle>
-                <WhiteBody variant='subtitle1'>
+                <Typography variant='h5' style={{ color: 'white' }}>
+                  Contact Info
+                </Typography>
+                <Typography style={{ color: 'white' }}>
                   Edmund Xin
-                  <br />
-                  4818 Alexandria Ln
-                  <br />
-                  San Jose, CA 95129 US
                   <br />
                   (913)-617-0133
                   <br />
-                  markxin2002@gmail.com
-                </WhiteBody>
+                  mxin@gatech.edu
+                </Typography>
               </div>
             </div>
           </div>
@@ -88,7 +86,7 @@ const Resume = () => {
           Download Resume
         </ChubbyButton>
       </section>
-    </Box>
+    </AboutCard>
   );
 };
 

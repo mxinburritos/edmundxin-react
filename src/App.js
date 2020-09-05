@@ -13,7 +13,7 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import SlideRoutes from 'react-slide-routes';
+import { AnimatedSwitch } from 'react-router-transition';
 import Background from './assets/img/ryanHuttonJztmx9yqjbwUnsplash.jpg';
 
 const BackgroundImage = styled.div`
@@ -37,12 +37,16 @@ const App = () => {
     <Router>
       <BackgroundImage>
         <Navbar />
-        <Switch>
+        <AnimatedSwitch
+          atEnter={{ opacity: 0 }}
+          atLeave={{ opacity: 0 }}
+          atActive={{ opacity: 1 }}
+          className='switch-wrapper'
+        >
           <Route path='/' exact component={Home} />
           <Route path='/projects' component={Projects} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-        </Switch>
+          {/* <Route path='/about' component={About} /> */}
+        </AnimatedSwitch>
       </BackgroundImage>
     </Router>
   );
