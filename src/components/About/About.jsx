@@ -1,8 +1,7 @@
 import React from 'react';
-import { Grid, Typography, Box, Button } from '@material-ui/core';
+import { Typography, Box, Button } from '@material-ui/core';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import { styled } from '@material-ui/core/styles';
-import Avatar from 'react-avatar';
 
 const ChubbyButton = styled(Button)({
   borderRadius: '5em',

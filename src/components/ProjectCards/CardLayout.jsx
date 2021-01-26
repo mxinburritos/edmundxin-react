@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Grid, Box, CardMedia, Typography } from '@material-ui/core';
-import Masonry from 'react-masonry-component';
+import { Box, Typography } from '@material-ui/core';
 
 import ProjectCard from './ProjectCard';
 

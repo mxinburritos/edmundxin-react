@@ -9,7 +9,6 @@ import {
   CardMedia,
 } from '@material-ui/core';
 import cx from 'classnames';
-import Masonry from 'react-masonry-component';
 
 import styling from './ProjectCard.module.css';
 

@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  MuiThemeProvider,
   ThemeProvider,
-  createMuiTheme,
   CssBaseline,
 } from '@material-ui/core';
 

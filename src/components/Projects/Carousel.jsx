@@ -1,12 +1,8 @@
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Card,
-  Grid,
   Button,
-  CardContent,
   Typography,
-  Box,
 } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
@@ -65,14 +61,14 @@ const ArrowButtonBack = styled(ButtonBack)({
   },
 });
 
-const BlurredCard = styled(Card)({
-  borderRadius: '10px',
-  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-  height: '40em',
-  width: '70em',
+// const BlurredCard = styled(Card)({
+//   borderRadius: '10px',
+//   backgroundColor: 'rgba(255, 255, 255, 0.1)',
+//   height: '40em',
+//   width: '70em',
 
-  backdropFilter: 'blur(3px)',
-});
+//   backdropFilter: 'blur(3px)',
+// });
 
 const ChubbyButton = styled(Button)({
   borderRadius: '5em',
@@ -93,10 +89,8 @@ const ChubbyButton = styled(Button)({
   },
 });
 
-const projectInfo = [{}];
-
 const Carousel = () => {
-  const [content, setContent] = useState([]);
+  // const [content, setContent] = useState([]);
 
   return (
     <CarouselProvider
@@ -120,7 +114,7 @@ const Carousel = () => {
                   Group Chat Analyzer
                 </Typography>
                 <Typography style={{ color: 'white' }}>
-                  📱Application that takes JSON data from Facebook Messenger and
+                  <span aria-label="phone" role="img">📱</span> Application that takes JSON data from Facebook Messenger and
                   analyses contents. It will display metrics like the number of
                   swear words spoken for each person and charts to represent it.
                 </Typography>
@@ -153,7 +147,7 @@ const Carousel = () => {
                   Weatherboy
                 </Typography>
                 <Typography style={{ color: 'white' }}>
-                  ⛅️ A simple weather application that gives allows you to
+                  <span role="img" aria-label="cloud">⛅</span>️ A simple weather application that gives allows you to
                   search for cities around the world. It displays the current
                   temperature and the week's forecast. The background image will
                   change to reflect the city you searched.
@@ -187,7 +181,7 @@ const Carousel = () => {
                   Disaster Tweet Classification
                 </Typography>
                 <Typography style={{ color: 'white' }}>
-                  ☄️ Processes contents of a tweet and classifies it as
+                  <span role="img" aria-label="asteroid">☄</span>️ Processes contents of a tweet and classifies it as
                   referring to a disaster or not using a Naive Bayes Classifier.
                 </Typography>
                 <div>
