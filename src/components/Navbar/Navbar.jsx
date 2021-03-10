@@ -18,12 +18,16 @@ const Navbar = () => {
         <Grid container justify='center' alignItems='center' spacing={3}>
           <Grid item>
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <FormatButton>Home</FormatButton>
+              <FormatButton>
+                  Home
+              </FormatButton>
             </Link>
           </Grid>
           <Grid item>
             <Link to='/projects' style={{ textDecoration: 'none' }}>
-              <FormatButton>Projects</FormatButton>
+              <FormatButton>
+                  Projects
+              </FormatButton>
             </Link>
           </Grid>
           {/* <Grid item>
