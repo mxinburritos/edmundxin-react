@@ -1,16 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-import About from './components/About/About';
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Projects from './components/Projects/Projects';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
-import { AnimatedSwitch } from 'react-router-transition';
-import Background from './assets/img/ryanHuttonJztmx9yqjbwUnsplash.jpg';
+import About from "./components/About/About";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import Projects from "./components/Projects/Projects";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AnimatedSwitch } from "react-router-transition";
+import Background from "./assets/img/ryanHuttonJztmx9yqjbwUnsplash.jpg";
+import Attribution from "./components/Attribution/Attribution";
 
 const BackgroundImage = styled.div`
   position: fixed;
@@ -37,13 +36,14 @@ const App = () => {
           atEnter={{ opacity: 0 }}
           atLeave={{ opacity: 0 }}
           atActive={{ opacity: 1 }}
-          className='switch-wrapper'
+          className="switch-wrapper"
         >
-          <Route path='/' exact component={Home} />
-          <Route path='/projects' component={Projects} />
-          <Route path='/about' component={About} />
+          <Route path="/" exact component={Home} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/about" component={About} />
         </AnimatedSwitch>
       </BackgroundImage>
+      <Attribution />
     </Router>
   );
 };

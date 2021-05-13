@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
 import Resume from '../../assets/docs/resume.pdf';
+import styles from './Home.module.css'
 
 library.add(fab);
 
@@ -42,11 +43,12 @@ const ChubbyButton = styled(Button)({
 	padding: '0.4em',
 	paddingLeft: '2em',
 	paddingRight: '2em',
+	fontFamily: 'Poppins !important',
 
 	backdropFilter: 'blur(3px)',
 
 	'&:hover': {
-		backgroundColor: 'rgb(255, 255, 255, 0.05)',
+		backgroundColor: 'rgb(255, 255, 255, 0.2)',
 	},
 });
 
@@ -59,16 +61,16 @@ const Home = () => {
 			alignItems='center'
 			height='60%'
 		>
-			<Title>I'm Edmund Xin.</Title>
-			<Subtitle>{'Software Engineer \u2758 Georgia Tech Student'}</Subtitle>
+			<Title className={styles.font}>I'm Edmund Xin.</Title>
+			<Subtitle className={styles.font}>{'Software Engineer \u2758 Georgia Tech Student'}</Subtitle>
 			<Grid justify='center' container spacing={3}>
 				<Grid item>
 					<Link to='/projects' style={{ textDecoration: 'none' }}>
-						<ChubbyButton target='_blank'>Portfolio</ChubbyButton>
+						<ChubbyButton target='_blank' className={styles.font}>Portfolio</ChubbyButton>
 					</Link>
 				</Grid>
 				<Grid item>
-					<ChubbyButton href={Resume} target='_blank'>
+					<ChubbyButton href={Resume} target='_blank' className={styles.font}>
 						Resume
 					</ChubbyButton>
 				</Grid>
